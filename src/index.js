@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+//2. Defination Area
 //There are two types of component
 //1. Functional Component
 function A(props){  //We will receive a formal arument
@@ -16,7 +17,7 @@ function A(props){  //We will receive a formal arument
            <img src={props.imgA} />
 
            <B headingB={headB} paragraphB={paraB} imageB={imgB}></B>
-         </>
+         </>   
   
 }
 //2. Class Component
@@ -115,21 +116,36 @@ class F extends React.Component {
               <p>{this.props.paragraphF}</p>
               <img src={this.imgF} />
 
-              <F paragraph={this.paraG} imageG={this.imgG} />
+              <G  paragraphG={this.paraG} imageG={this.imgG} />
            </>
   }
 }
 
 //Fat Arrow function
-let G = props =>{
+let G = (props) =>{
   let paraG="The new tunnel under 16,703 feet Shinkun La will allow all-weather connectivity to Ladakh from Himachal Pradesh via Manali-Darcha axis and allow faster deployment of Indian troops to tackle any flare up in Kargil-Siachen sector with Pakistan or with PLA in East Ladakh.";
   const imgG="https://www.hindustantimes.com/ht-img/img/2023/02/15/550x309/shinkun_la_tunnel_1676462743827_1676462752850_1676462752850.png";
   //Every function return something
   return <React.Fragment>
-            <h1>{props.headG}</h1>
+            <h1>{props.headingG}</h1>
             <p>{paraG}</p>
             <img src={imgG} />
+
+            <H />
          </React.Fragment>
+}
+
+//function Component
+function H(props){
+  const headH="Singer Anup Jalota says India should be Hindu Rashtra: 'Like in Kashmir...'";
+  let paraH='Anup Jalota, in a video, said India should be announced as a Hindu nation as there is no such nation in the world. “Like the changes in Kashmir, it will not make any difference to the people. Only the announcement should be made,” the singer said.';
+  var imgH="https://www.hindustantimes.com/ht-img/img/2023/02/15/550x309/94970f94-f0a6-11ec-be7e-df6703e802fb_1655735920139_1676467025271_1676467025271.jpg";
+  //Every function return something
+  return <>
+            <h1>{headH}</h1>
+            <p>{paraH}</p>
+            <img src={imgH} />
+         </>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
